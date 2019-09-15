@@ -8,12 +8,13 @@ public class TestLinkedList {
         s.addAtTheEnd(30);
         s.addAtTheBegining(15);
         s.addAfter(20,25);
+        s.addBefore(20,5);
         System.out.println("The first element was " + s.deleteFirst());
         System.out.println("The length of the linked list is " + s.getLength());
 
         System.out.println("The Linked List has the following elements "+s);
 
-        System.out.println("The first element was " + s.deleteLast());
+        System.out.println("The last element was " + s.deleteLast());
         System.out.println("The length of the linked list is " + s.getLength());
 
         System.out.println("The Linked List has the following elements "+s);

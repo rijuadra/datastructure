@@ -73,18 +73,39 @@ public class SinglyLinkedList {
     public void addAfter(int positionData, int data) {
         Node node = new Node(data);
         Node nd = head;
-        boolean flag=true;
-        while(nd!=null){
-            if(nd.getData().equals(positionData)){
+        boolean flag = true;
+        while (nd != null) {
+            if (nd.getData().equals(positionData)) {
                 node.setNext(nd.getNext());
                 nd.setNext(node);
-                flag=false;
+                flag = false;
                 length++;
                 break;
             }
-            nd=nd.getNext();
+            nd = nd.getNext();
         }
-        if(flag){
+        if (flag) {
+            System.out.println("position element not found");
+        }
+    }
+
+    public void addBefore(int positionData, int data) {
+        Node node = new Node(data);
+        Node nd = head;
+        Node prev = head;
+        boolean flag = true;
+        while (nd != null) {
+            if (nd.getData().equals(positionData)) {
+                node.setNext(nd);
+                prev.setNext(node);
+                flag = false;
+                length++;
+                break;
+            }
+            prev = nd;
+            nd = nd.getNext();
+        }
+        if (flag) {
             System.out.println("position element not found");
         }
     }
