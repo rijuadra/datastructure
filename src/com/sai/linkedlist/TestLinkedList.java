@@ -9,6 +9,7 @@ public class TestLinkedList {
         s.addAtTheBegining(15);
         s.addAfter(20,25);
         s.addBefore(20,5);
+        s.delete(10);
         System.out.println("The first element was " + s.deleteFirst());
         System.out.println("The length of the linked list is " + s.getLength());
 

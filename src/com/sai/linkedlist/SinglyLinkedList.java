@@ -109,4 +109,17 @@ public class SinglyLinkedList {
             System.out.println("position element not found");
         }
     }
+
+    public void delete(int data) {
+        Node node=new Node(data);
+        Node nd=head;
+        Node prev=head;
+        while(nd!=null){
+            if (nd.getData().equals(data)) {
+                prev.setNext(nd.getNext());
+            }
+            prev=nd;
+            nd=nd.getNext();
+        }
+    }
 }
