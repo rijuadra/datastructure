@@ -14,7 +14,7 @@ public class SinglyLinkedList {
     }
 
     public int addAtTheEnd(int data) {
-        Node node=new Node(data);
+        Node node = new Node(data);
         if (head == null) {
             head = node;
             tail = node;
@@ -28,30 +28,31 @@ public class SinglyLinkedList {
         return 1;
     }
 
-    public int addAtTheBegining(int data){
-        Node node=new Node(data);
+    public int addAtTheBegining(int data) {
+        Node node = new Node(data);
         node.setNext(head);
-        head=node;
+        head = node;
         length++;
         return 1;
 
     }
 
-    public int deleteFirst(){
-        Integer i= (Integer) head.getData();
-        head=head.getNext();
+    public int deleteFirst() {
+        Integer i = (Integer) head.getData();
+        head = head.getNext();
         length--;
         return i;
     }
-    public int deleteLast(){
-        Integer i=1;
-        Node node=head;
-        Node nodePrev=head;
-        while(node!=tail){
-            nodePrev=node;
-            node=node.getNext();
+
+    public int deleteLast() {
+        Integer i = 1;
+        Node node = head;
+        Node nodePrev = head;
+        while (node != tail) {
+            nodePrev = node;
+            node = node.getNext();
         }
-        i= (Integer) node.getData();
+        i = (Integer) node.getData();
         nodePrev.setNext(null);
         length--;
         return i;
@@ -59,13 +60,32 @@ public class SinglyLinkedList {
 
     @Override
     public String toString() {
-        String data="";
-        Node node=new Node();
-        node=head;
-        while(node!=null){
-            data=data+((data=="")?"":",")+node.getData();
-            node=node.getNext();
+        String data = "";
+        Node node = new Node();
+        node = head;
+        while (node != null) {
+            data = data + ((data == "") ? "" : ",") + node.getData();
+            node = node.getNext();
         }
         return data;
+    }
+
+    public void addAfter(int positionData, int data) {
+        Node node = new Node(data);
+        Node nd = head;
+        boolean flag=true;
+        while(nd!=null){
+            if(nd.getData().equals(positionData)){
+                node.setNext(nd.getNext());
+                nd.setNext(node);
+                flag=false;
+                length++;
+                break;
+            }
+            nd=nd.getNext();
+        }
+        if(flag){
+            System.out.println("position element not found");
+        }
     }
 }
