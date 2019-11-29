@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class SortTester {
     public static void main(String args[]) {
-        int arr[] = {-12, 5, 1, 4, 8, 9};
+        int arr[] = {12, -5, 1,1, 8, 9,4};
 
         ISort iSort;
         String sortingType;
         Scanner scanner= new Scanner(System.in);
-        System.out.println("System supports the following sorts as of now-BubbleSort,InsertionSort,SelectionSort");
+        System.out.println("System supports the following sorts as of now-BubbleSort,InsertionSort,SelectionSort,QuickSort,MergeSort");
         System.out.println("Enter the type of sorting you want..Please enter the class name of that sorting type");
         sortingType= scanner.next();
         try {
